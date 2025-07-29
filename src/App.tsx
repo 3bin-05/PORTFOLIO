@@ -165,7 +165,7 @@ const App = () => {
           <div className="animate-fade-in">
             <div className="mb-8">
               <img
-                src="cbcdb98b2d499f10af251671d9237d05.jpg"
+                src="https://media.licdn.com/dms/image/v2/D5603AQG7WyiyFckd7g/profile-displayphoto-shrink_200_200/B56ZTfoYbRGsAc-/0/1738918695173?e=2147483647&v=beta&t=wL39EOSsUjGdyVYm4t_0soXyPwRQOWKCbL3aIs59nEA"
                 alt="Ebin's Profile"
                 className="w-44 h-44 rounded-full mx-auto shadow-xl border-4 border-blue-500 object-cover"
               />
