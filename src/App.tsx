@@ -89,7 +89,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-gray-200/90 backdrop-blur-md border-b border-gray-100 z-50"> {/* Changed bg-gray-100/90 to bg-gray-200/90 */}
+      <nav className="fixed top-0 left-0 right-0 bg-gray-200/50 backdrop-blur-md border-b border-gray-100 z-50"> {/* Changed bg-gray-100/90 to bg-gray-200/90 */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-end md:justify-center items-center h-16 relative">
             {" "}
@@ -122,7 +122,7 @@ const App = () => {
               {/* Added absolute positioning for mobile */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -132,7 +132,7 @@ const App = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-200/50 border-b border-gray-100 shadow-lg">
             <div className="px-4 py-2 space-y-2">
               {[
                 { id: "home", label: "Home", icon: Home },
@@ -214,7 +214,7 @@ const App = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-gray-100/90">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
@@ -253,7 +253,7 @@ const App = () => {
             <div className="space-y-12">
               {" "}
               {/* This div stacks education and skills vertically */}
-              <div className="bg-gray-50 p-6 rounded-xl">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl">
                 <h3 className="text-xl font-semibold text-slate-800 mb-4">
                   Education
                 </h3>
@@ -297,7 +297,7 @@ const App = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-slate-50">
+      <section id="projects" className="py-20 bg-gray-100/90">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
