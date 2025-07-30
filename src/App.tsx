@@ -12,6 +12,8 @@ import {
   ChevronDown,
 } from "lucide-react";
 
+import pfpImage from './pfp.jpg'; // <--- ADD THIS LINE: Import your profile picture
+
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -54,7 +56,7 @@ const App = () => {
     {
       title: "ETHICAL HACKING",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4s5Hm26rOXbL7qo7p1OLcTMe026AeR4NRnQ&s",
+        "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA1wMBEQACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAGAgMEBQcBAAj/xABEEAACAQMDAgQDBAYHBgcBAAABAgMABBEFEiEGMRMiQVEUYXEHIzKBFUJikbHBQ1KhoqPR4TRTVIKS0hYzc7Li8PEI/8QAGgEAAwEBAQEAAAAAAAAAAAAAAQIDAAQFBv/EAC8RAAICAgECBQMDBAMBAAAAAAABAhEDITESQQQTIlFhMnGRQoGhFCNS4RWxwQX/2gAMAwEAAhEDEQA/AMOrGFoM0yMKK8UTCU/H9KC5Ax1MvMp9qPLA+Dso+8z7d6Z8gXAw/wCI1N8jLgTWCLVa1GO7cUwDvagY7wRWMI9fasEutP6Z1O9tTcJGkcZ/D4jYL/SnUG2ieWCdFZd2k9lcNb3URjkXuppaa5HTTVobAPFYId/ZRpltqPUAS8K7ETdtP6xqkXRLJ7H0ZaWVnBEFjREAGOAKSUpMaMYokEW4wCRj6Uux9AR9puladfaBOTGhmQZjbHINPBMnNxR88y6ZdRSKxjPDUekymmhOo2kmEbZya04ghJET4C5xnwjSdJTqR5LaWJ/PGRRSYHIbkiYyZoOOw9RJtYT4icdzTpCyYe2Olb7ZGKjtV0jjlLZmVcR6A6gpkBij2omHbYxhG3DzUULKyTZQIkLyv3Pb6UyVbEm+wx4owx4yawwxgEZqbKHAnNYwogUTCTWAJNYw5bxSXEiRQoXkc4VQOSayVnelbDHS9CsNK2z6tNHJdA5WJRlUP8zVowS5OTJmlLUeCbca3CzYDzvzxjgCmbRNQZF1G7stYVYbyCZXUYSZl8y/n9T6VbSY8eqHDBi7snsrgwyc4/Cw7MPekao6Iy6lYQ9H2N9c32LCOQyjGGTjb+dPBE8jNhtdG6mks1X4/wANj7kkinlKCJRhkeyl13S+rtNtXmN+8yKOdrEGl6osp0yXIz0xcTahabr13lY995zVYrRzzbse1LTYXXPhr+6moVNgH1Qq2siCOEkg9gKjPRbGrZZ6H8JeWyqyDxB34po0wTtA71Wy2l0FVBgn2pJ6ZXGupFEsiSoxwAc0hSqJdoA00WMd6Ir1Zq2lwL8FHwMkV0Lg429mGBDkD1rgR6rVEz4SRApZSAw8pPrT1RJSTk0uwoWrMO1L1I6PKlVjtvpcryLxjPvTpHLPJTolXOmXQXaAdgoyNjakNxaRI0W4g8cUFwUlpkOW3aNmXHY0j5CuBnGKwTh7UTCKwDlYwe9EaWLfRZtWdU8SYmONj3VR3x9T61bGtWcmebcukgaxLFvdpI974wAvpTOhYWDzh1k3CLbzwAmpzoVUW9nrd5HGIZGVgO2QDT2SljRJvSupQBSFEicqcY/KtLaFh6GaR9kOm6hBCZmtgsDkEMTyaFpRpjq5StGuoxVBlRXOzpWkDPVfVOmaZbSRXciiUqdsZGSasGD5JymuDIdG6mjs2lCr5GYlR8s1ZZEkc8sbfBNm6u8QYEf7xSvxETLw8isvNQ+KYObdmJ/Zqcs8R1hkjmnLcW0jSLbuM9gFNKvEQjtm8psqupIbm6HjyQOsefxMpGaHnxyPTHUHApUtRcBRGhJPoBT2Zvp2yxsNNuBcRBYXwG58tZS2SllianYRNFZR7lIIGOa6kzlclejMtV0aC0mtTEolWRAzeG+SM/zrz3GUVV2fQQ8RjzPq8tpLn5+UWFrpVzqiwiaREgjACKzAMFJxj61SLlkuJx5Y+H8JNZatT3rbpHWs7i3uLyC18BktlO7dtPGfT3pV4d9y0v8A7cIxXQvTLStb37ibDqRxPb209tbFeVJMIzg4P8qupOKpHmy8PDPneWUnvZoq2NhdWJmhjhVSGKnwhn+NLPa9ejpwpYZteG9T72Q4tL09YC6xIxJPl8I+4+dJSXDOieXPO+vH0p9/b5/YBOs7awgfNsY1lLNvjQEeHz25rdPchHPf9qKtL9X+QEv+I0Ch5UZ+wrGFGBwM4rGoctLKW6uY4I1JeRgq/U0yElJI1PV5I9C0CCDw0MMEezbzlj/+5rpWkcC9crM71fWJZpNqBEBHZB2qcpHTjxIppJWc5difzqbZdJDsUsKjIWUMPXdRQriyys7khu/5GnTIyibZ9nHWcK6Qtlcp97AMZA5K+lTy0tyYscjg6psJ7rrWxgiaR94VR9UNRUoPSY7zP/F/gxT7QuoBr2qCaJGRIxgZ7mr2aO9lHoySy3KCI+fPlz/rSTSapjSn0Kw1NtqTnEbiFu+Q4/dxXHPw+JcRIQ8XTuUtfb/RIe01IJ579yB3Cv8A60Y4Ma4gMvGQk6T/AIGbsyyKF+KuGfAHAP8AnVXjhwooZSfNlXrzLZaMY5JpJZTwA3I+veqRxeWuDKXXLkG9EY/FxD3bFZlMv0sP7Wxm8aErby5HJIj7f3an0L2PNln39cfwFyW6mFS0cmfXg12QnSom5x5c0B+mvazRmO2R4pU8NQ7SjbnJGefSo1BPXJ7PmeKeKTyyXl913a7Irb201WaK6L3ETRwht2Cvbd6Yo11PfYmsscEU8atZP49ih0dit0zOGeReU44LZ9flSylNNOJ1YsHh5wcMtpvS+7E6zFdnVkup4wjPLzswBWWVTkL/AMe/CYlHtvuHV1q0VrpESkxncgUAjPJIq01TtbJYnDJHok+ml25/crr3Uglq0wlVWdiQFPAp+lJWcynP6bbRndxfmczGQb2kP4j6c1yzTk7PRwShCDjX8iRBA0sgwMg0RLXUGOh9P2TlDdXcQBH4SG44z3ArRTnH2B4jPHw010x61X/Zb6r0/aR2O21smmk5+8jLEDgelZxl9K/I+PLi63PJq9KPdP3/AHEaPo40q2+LeESXknEAP9Ge3NdEEqPMzObyNPS9vcgdcaiXjsY7aTxoZIGLSgDzHtn8qZjY49wLudPa2cvLhohgg57/ACqTjWzojO9Ii3JTKtGAAVBxQlXYpG+4yHwaWwj6Sgr+LDCmsRxCjpLW/wBGapFM43R8CQNyCv0ozj1xom1Ts0ycpc28s6srRbckiHj+FcCxZlwv4KTw+D4eR37dT/Bn+uRRXF28oYjJxhYWZXVBSS2cz/t+mC19yHpkE0V8gtS5IbhtmMfvrTh1RpoPnKCuWg3spr8MRcyTOrcDDDvn6iuGXhIp6gvyI/HQktTa/YeMjLdSeJLd7tuRsXOT9c00MVcxRSGVTjak3+xCtLiU6lJJdzXTRqPwEcdq6cWOKl1UjZJtxpAn1RNLfXzmGCZoV4XCnmrylbDiiorZA0JZYr2JjGy4cZ7pkVDInRZtPua5Z36RRx+JeW3cfhg9P+iuHJyvTL8/7I+Xerj+Cfc6pbyYX48AH0EJ/wC2tOb7Qf5B5Uv81+CRL0k4hMECBY3VVcEjnB+letSS9Gg+ZKUlLxHqritUIXpOfwFgZFMajaBuH9b6UOlPUho5vKv+mVN82Mr0Y1rNLPBEoaTIIbB4zkUypL0k5ReR9Xid/YrdY6X1K9eQmG22EsR5ORmm8uMl6hYZn4eUvK4arZUX/SCrYZuJG3p2FX8tNHP/AFEuoC9Ys3ghbznHPFRkqOjHO2CiLlto7Zrn4O5Kww6d02eWPwhZhvFI2y4yV+lKsl+lcjZPB9DWfJKoo1XStHgsbRYrZdqgcCuvBpHnyzNyd2SX03B/7f/gKzaItfTeH/AKf/gKI0h+mYf/T/wDAURpD9Nwev/gKI0j+m4f/T/wDAUNaSH6Zh9/8AgKLQYfpGH/0/+AotBg/psP/p/8AtYNoMvpsP8A6f8AwFoNoMvpsP8A6f/AWg2gy+mIe/h/wAVrBpD9Ow/wD0/wDwloNofp+H/wBP/gLWHYfp2H3/4Cw0iFpdPww2N/h4h/8ArWjB0xS+2tAfpOAf/T/AOAotBg/T8P/p/8ABLWh2H6fh/8AT/4C1oNh+nIP/p/8BZYbD9NQ/8Ap/8ArYyD9Ow/wBp/wDBbQbD9NQ//T/4C1g2j9Pw/8Ap/8AAWsGh+mIf/T/AOAotaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ/T8P/p/8BYaQ//Z",
       description:
         "Click Jack is a security demo project I built to showcase how attackers exploit hidden UI elements using iframe overlays, emphasizing the need for proper clickjacking protection.",
       link: "https://medium.com/@ebin05reji/detecting-clickjacking-my-internship-project-feef788ee330", // <--- REPLACE THIS WITH THE ACTUAL LINK
@@ -87,7 +89,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-gray-100/50 backdrop-blur-md border-b border-gray-100 z-50">
+      <nav className="fixed top-0 left-0 right-0 bg-gray-200/90 backdrop-blur-md border-b border-gray-100 z-50"> {/* Changed bg-gray-100/90 to bg-gray-200/90 */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-end md:justify-center items-center h-16 relative">
             {" "}
@@ -120,7 +122,7 @@ const App = () => {
               {/* Added absolute positioning for mobile */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-blue-600 transition-colors"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -130,7 +132,7 @@ const App = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-100/90 border-b border-gray-100 shadow-lg">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg">
             <div className="px-4 py-2 space-y-2">
               {[
                 { id: "home", label: "Home", icon: Home },
@@ -144,7 +146,7 @@ const App = () => {
                   className={`flex items-center space-x-3 w-full px-4 py-3 rounded-lg transition-all duration-200 ${
                     activeSection === id
                       ? "text-blue-600 bg-blue-50"
-                      : "text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                      : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                   }`}
                 >
                   <Icon size={20} />
@@ -175,7 +177,7 @@ const App = () => {
           <div className="animate-fade-in">
             <div className="mb-8">
               <img
-                src="src/pfp.jpg" // Ensure 'src' is the correct relative path from your public directory or adjust import
+                src={pfpImage} // Changed src to use the imported pfpImage
                 alt="Ebin's Profile"
                 className="w-44 h-44 rounded-full mx-auto shadow-xl border-4 border-blue-500 object-cover"
               />
@@ -203,7 +205,6 @@ const App = () => {
               </button>
             </div>
           </div>
-          {/* Moved ChevronDown outside this div for correct absolute positioning relative to the section */}
         </div>
 
         {/* ChevronDown arrow positioned correctly relative to the section */}
@@ -213,7 +214,7 @@ const App = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gray-100/90">
+      <section id="about" className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
@@ -296,7 +297,7 @@ const App = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-100/90">
+      <section id="projects" className="py-20 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
